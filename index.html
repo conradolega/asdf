@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			asdf
+		</title>
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/jquery.asdf.js"></script>
+	</head>
+	<body>
+		<h1>asdf</h1>
+		<button>Click this button to asdf all the text fields</button>
+		<p>Click each text field to asdf them individually</p>
+		<p><input type="text" /></p>
+		<p><input type="text" /></p>
+		<p><input type="text" /></p>
+		<p><input type="text" /></p>
+		<p><input type="text" /></p>
+		<script type="text/javascript">
+			$('button').click(function() {
+				$('input:text').asdf();
+			});
+			$('input:text').click(function() {
+				$(this).asdf();
+			});
+		</script>
+	</body>
+</html>
