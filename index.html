@@ -9,6 +9,9 @@
 	</head>
 	<body>
 		<h1>asdf</h1>
+		<p><input type="text" class="charset" placeholder="Enter character set here" /></p>
+		<p><input type="text" class="min" placeholder="Enter minimum length here" /></p>
+		<p><input type="text" class="max" placeholder="Enter maximum length here" /></p>
 		<button>Click this button to asdf all the text fields</button>
 		<p>Click each text field to asdf them individually</p>
 		<p><input type="text" /></p>
@@ -18,10 +21,16 @@
 		<p><input type="text" /></p>
 		<script type="text/javascript">
 			$('button').click(function() {
-				$('input:text').asdf();
+				var min = $('.min').val();
+				var max = $('.max').val();
+				var charset = $('.charset').val();
+				$('input:text').not('.charset, .min, .max').asdf(min, max, charset);
 			});
-			$('input:text').click(function() {
-				$(this).asdf();
+			$('input:text').not('.charset, .min, .max').click(function() {
+				var min = $('.min').val();
+				var max = $('.max').val();
+				var charset = $('.charset').val();
+				$(this).asdf(5, 10, null);
 			});
 		</script>
 	</body>
